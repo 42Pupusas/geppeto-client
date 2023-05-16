@@ -1,0 +1,149 @@
+Copy code
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('dist/UbuntuMono-Regular.ttf') format('ttf'),
+}
+
+body {
+    margin: 4em;
+    
+}
+
+.background {
+    background-image: url('fonts/back.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f2f2f2;
+    background-position: center center;
+    background-
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(-1);
+   z-index: -1; 
+}
+
+h1 {
+    margin:0;
+    font-size:3.6em;
+    color:#284759;
+    font-family: 'Ubuntu';
+}
+
+h2 {
+    margin:0;
+    font-size:1.3em;
+    color:white;
+    font-family: 'Ubuntu';
+}
+
+
+p {
+    font-size:0.8em;
+    color:white;
+    word-wrap:break-all;
+    font-family: 'Ubuntu';
+}
+
+button {
+    background-color:#4B84A6;
+    color:white;
+    border-radius:5px;
+    padding:5px;
+    margin:5px;
+    border:none;
+    margin-y:50px;
+    hover:background-color:lightblue;
+    font-family: 'Ubuntu';
+}
+
+form {
+    font-family: 'Ubuntu';
+    gap: 1em;
+}
+
+span {
+    font-family: 'Ubuntu';
+}
+input {
+    border-radius:5px;
+    padding:5px;
+    margin:5px;
+    margin-y:50px;
+    color:#435159;
+    hover:background-color:lightblue;
+    font-family: 'Ubuntu';
+}
+
+
+
+
+.container {
+    display:flex;
+    flex-direction:row;
+    gap: 0.5em;
+    align-items: top;
+}
+.content {
+    margin:2em;
+    padding:1em;
+    background-color:#284759;
+    border-radius:10px;
+    opacity:0.9;
+    gap: 0.5em;
+    max-height: min-content;
+}
+
+.user {
+    border:3px solid #435159;
+    border-radius:5px;
+}
+.keys {
+    max-width:90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.response {
+
+    display:flex;
+    flex-direction:column;
+    margin:10px;
+    padding:10px;
+    font-family: 'Ubuntu';
+    font-size:1.1em;
+}
+
+.svg-container {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.login {
+    max-width: min-content;
+}
+
+.credits {
+    display: flex;
+    flex-direction: row;
+    max-width: min-content;
+    max-height: 9em;
+    gap: 2em;
+}
+
+.chat {
+    max-width: min-content;
+    max-height: 6em;
+}
+
+.keygen {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;    
+}
