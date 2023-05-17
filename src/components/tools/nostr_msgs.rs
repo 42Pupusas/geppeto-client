@@ -6,6 +6,8 @@ use serde_json::{json, to_value};
 use instant::now;
 use crate::UserKeypair;
 
+pub const RELAY_URL: &str = "wss://relay.roadrunner.lat";
+
 #[derive(Serialize)]
 pub struct NostrEvent {
     pubkey: String,

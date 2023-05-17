@@ -1,4 +1,4 @@
-use crate::{components::tools::nostr_msgs, UserKeypair};
+use crate::{components::tools::nostr_msgs::{self, RELAY_URL}, UserKeypair};
 use futures::{SinkExt, StreamExt};
 use gloo::console::log;
 use gloo_net::websocket::{futures::WebSocket, Message};
@@ -34,7 +34,7 @@ pub fn chat_input() -> Html {
         let new_chat_prompt =
             nostr_msgs::create_chat_event(chat_state.clone().to_string(), user_context.clone());
         let prompt_request = json!(["EVENT", new_chat_prompt]).to_string();
-        let ws = WebSocket::open("ws://192.168.1.5:6969").unwrap();
+        let ws = WebSocket::open(RELAY_URL).unwrap();
         let (mut write, _read) = ws.split();
 
         spawn_local(async move {

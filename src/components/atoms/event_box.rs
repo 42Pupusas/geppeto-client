@@ -21,7 +21,7 @@ pub fn event_box() -> Html {
             let token_subscription = json!(["REQ", subscription_id, filters]);
             // Convert the JSON array to a Message format
             let token_subscription_msg = Message::Text(token_subscription.to_string());
-            let ws = WebSocket::open("ws://192.168.1.5:6969").unwrap();
+            let ws = WebSocket::open("wss://relay.roadrunner.lat").unwrap();
             let (mut write, mut read) = ws.split();
 
             spawn_local(async move {

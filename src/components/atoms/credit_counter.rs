@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::tools::nostr_msgs::new_keys;
+use crate::components::tools::nostr_msgs::{new_keys, RELAY_URL};
 use crate::UserKeypair;
 use futures::{SinkExt, StreamExt};
 use gloo::console::log;
@@ -33,7 +33,7 @@ pub fn credit_counter() -> Html {
             let token_subscription = json!(["REQ", subscription_id, filters]);
             // Convert the JSON array to a Message format
             let token_subscription_msg = Message::Text(token_subscription.to_string());
-            let ws = WebSocket::open("ws://192.168.1.5:6969").unwrap();
+            let ws = WebSocket::open(RELAY_URL).unwrap();
 
             let (mut write, mut read) = ws.split();
             spawn_local(async move {

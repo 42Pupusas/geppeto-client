@@ -7,7 +7,7 @@ use wasm_bindgen_futures::spawn_local;
 use web_sys::HtmlInputElement;
 use yew::prelude::*;
 
-use crate::components::tools::nostr_msgs;
+use crate::components::tools::nostr_msgs::{self, RELAY_URL};
 use crate::UserKeypair;
 
 #[function_component(CreditBox)]
@@ -35,7 +35,7 @@ pub fn credit_box() -> Html {
             user_context.clone(),
         );
         let prompt_request = json!(["EVENT", new_credit_prompt]).to_string();
-        let ws = WebSocket::open("ws://192.168.1.5:6969").unwrap();
+        let ws = WebSocket::open(RELAY_URL).unwrap();
         let (mut write, _read) = ws.split();
 
         spawn_local(async move {
